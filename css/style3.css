@@ -1,0 +1,528 @@
+.container{
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+
+
+/* dark mode */
+
+
+body.dark-mode{
+    background-color: black;
+    color: white;
+  }
+body.dark-mode .about-card .card-body{
+    background-color: rgba(0, 0, 0, 0.878);
+}
+body.dark-mode .about-card .card-body h5{
+    color: white;
+}
+
+body.dark-mode .about-card .card .card-body .hh p{
+    color:white;
+    
+}
+body.dark-mode .about-card .card .card-body hr{
+    color:white;
+}
+  body.dark-mode .email-num button.email a{
+    color: white;
+  }
+
+  /* Navigation and headers */
+body.dark-mode .about-card .nav li button
+ {
+    color: #FFFFFF; /* Brighter white for text in headers and nav */
+}
+
+body.dark-mode .theme img{
+    /* src: url(../images/icons/light-logo.svg); */
+}
+
+
+ 
+  body.dark-mode button {
+     color: white;/* Light purple, good for dark themes */
+      /* background-color: #333333; Dark background for buttons */
+  }
+
+  body.dark-mode .project-card .project-info {
+    color:black;
+  }
+  body.dark-mode .form h5 {
+    color:black;
+  }
+  body.dark-mode .social-icons i {
+    color:white;
+  }
+
+/* end dark mode */
+
+.theme{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+.theme i{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.theme i::after{
+    content:"Dark Mode"; /* Uses the data attribute to display content */
+    position: absolute;
+    bottom: 10px; /* Positions the text below the circle */
+    right: 5;
+    transform: translateX(-50%); /* Centers the text below the circle */
+    white-space: nowrap; /* Prevents the text from wrapping */
+    color: orangered;
+    font-size: 15px;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.theme i:hover::after{
+    opacity: 1; /* Makes the content visible on hover */
+    transform: translateX(-50%) translateY(10px); /* Moves the text slightly down */
+}
+.theme img{
+    /* object-fit: cover; */
+    width: 80px;
+    /* border: 1px solid black; */
+    border-radius: 50px;
+
+}
+
+
+
+/* start header */
+
+.header{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+}
+
+
+
+.header .img img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #f0f0f0;
+
+}
+
+
+
+.header .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 30px;
+    margin-right: 140px;
+
+}
+
+
+.header .content .email-num{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+}
+.header .content .email-num button{
+    background-color: transparent;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    
+}
+.header .content .email-num button a{
+    text-decoration: none;
+    color: black;
+}
+
+.header .content .email-num .email ,.header .content .email-num .num{
+    position: relative;
+    padding-left: 30px;
+}
+
+.header .content .email-num .email i{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    text-align: center;
+}
+
+.header .content .email-num .num i{
+    position: absolute;
+    text-align: center;
+    left: 5px;
+    top: 5px;
+}
+
+.header .content .title{
+    margin-bottom: 0;
+}
+
+
+
+
+/* end header */
+
+/* start main section */
+.about-card{
+    margin-top: 30px;
+    display: flex;
+    gap: 50px;
+    justify-content: start;
+    align-items: baseline;
+    position: relative;
+
+}
+
+
+.nav{
+   
+    width: 100%;
+     display: grid;
+    grid-template-columns: repeat(3 ,1fr);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.nav .nav-item button{
+   
+    width: 100%;
+    grid-template-columns: repeat(3 ,1fr);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+
+
+.nav-item button:not(.active) {
+    border-bottom: 3px solid rgb(0, 0, 0);
+    color: black;
+}
+
+
+.content-section {
+    /* display: none; */
+}
+
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    gap: 50px;
+    padding: 20px;
+}
+
+.project-card {
+    padding: 5px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.project-info h5 ,.project-info p {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+#content-container, #resume-container, #contact-container {
+    min-height: 200px;
+    display: none; /* Adjust from flex to none to control visibility via JS */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    left: 360px;
+}
+
+#resume-container {
+    /* background-color: aqua; */
+    width: 70%;
+}
+#resume-container h4{
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+#resume-container .exp {
+    display: flex;
+    gap: 50px;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 10px;
+   
+}
+
+#resume-container .education{
+    display: grid;
+    grid-template-columns: repeat(2 ,1fr);
+    justify-content: space-around;
+    align-items: baseline;
+    padding-left: 10px; 
+    row-gap: 30px;
+    column-gap: 50px;
+
+}
+
+#resume-container .exp .exp1 h3 ,#resume-container .exp .exp2 h3{
+    font-size: 20px;
+}
+
+#resume-container .exp .exp1 , #resume-container .exp .exp2{
+    display: flex;
+    flex-direction: column;
+  
+
+}
+
+
+
+
+#resume-container .education .edc1 h3 ,#resume-container .education .edc2 h3{
+    font-size: 20px;
+}
+
+#resume-container .education .edc1 , #resume-container .education .edc2{
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+#resume-container .skills{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(4 ,1fr);
+    gap: 10px;
+    margin-bottom: 50px;
+
+
+}
+
+#resume-container .skills .skill-item{
+    border: 2px solid rgba(0, 0, 0, 0.192);
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #cccccc5c;
+
+
+
+}
+
+#resume-container .skills .skill-item i{
+    text-align: center;
+    font-size: 25px;
+}
+
+#resume-container .skills .skill-item .html{
+    color: orangered;
+
+}
+
+#resume-container .skills .skill-item .css{
+    color: rgb(24, 176, 236);
+
+}
+
+#resume-container .skills .skill-item .js{
+    color: rgb(229, 229, 45);
+
+}
+#resume-container .skills .skill-item .react{
+    color: skyblue;
+
+}
+#resume-container .skills .skill-item .java{
+    color: black;
+
+}
+#resume-container .skills .skill-item .github{
+    color: rgb(82, 6, 153);
+
+}
+#resume-container .skills .skill-item .python{
+    color: rgb(198, 198, 26);
+
+} 
+#resume-container .skills .skill-item .flutter{
+    color: rgb(30, 175, 232);
+
+}
+
+
+
+
+/* ======================================
+               end resume container */
+
+
+
+#contact-container h4{
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+
+.contact-details{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contact-info .email-me ,.contact-info .address ,.contact-info .contact-num{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: start;
+    align-items: center;
+}
+.email-me .emails p{
+    margin: 0;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+    background-color: #f4f4f9; /* Adjusted background color for better contrast */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px; /* Adjust width as needed */
+    margin: auto; /* Centering the form */
+}
+
+.form-label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-submit-button {
+    font-size: 16px;
+    color: white;
+    background-color: #4a5f7c;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.form-submit-button:hover {
+    background-color: #394e6f;
+}
+
+
+
+
+
+
+.social-icons{
+    display: flex;
+    gap: 30px;
+}
+
+.social-icons i{
+    font-size: 30px;
+}
+
+.social-icons i:hover{
+    cursor: pointer;
+
+}
+ .social-icons i::after{
+    content:"LinkedIn"; /* Uses the data attribute to display content */
+    position: absolute;
+    bottom: 170px; /* Positions the text below the circle */
+    right: 50;
+    transform: translateX(-50%); /* Centers the text below the circle */
+    white-space: nowrap; /* Prevents the text from wrapping */
+    color: orangered;
+    font-size: 15px;
+    opacity: 0;
+    border: 1px solid rgba(0, 0, 0, 0.223);
+    padding: 10px;
+    border-radius: 12px;
+    transition: opacity 0.3s, transform 0.3s;
+    text-align: center;
+}
+ .social-icons i:hover::after{
+    opacity: 1; /* ** Makes the content visible on hover */
+    transform: translateX(-50%) translateY(10px); /* Moves the text slightly down */
+}
+    
+.hidden {
+    display: none;
+}
+
